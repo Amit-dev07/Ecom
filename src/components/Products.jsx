@@ -1,5 +1,5 @@
 const Products = () => {
-    const isLoading = false; // Simulating loading state
+    const isLoading = true; // Simulating loading state
     const errorMessage = null; // Simulating error state
     const products = [
 {
@@ -25,9 +25,9 @@ const Products = () => {
 ]
   return (
     <div className="lg:px-14 sm:px-8 px-4 py-14 2xl:w-[90%] 2xl:mx-auto">
-            <Filter categories={categories ? categories : []}/>
+
             {isLoading ? (
-                <Loader />
+                <h1>Loading...</h1>
             ) : errorMessage ? (
                 <div className="flex justify-center items-center h-[200px]">
                     <FaExclamationTriangle className="text-slate-800 text-3xl mr-2"/>
@@ -48,7 +48,8 @@ const Products = () => {
                             totalProducts = {pagination?.totalElements}/>
                     </div>
                 </div>
-            )}
+            )
+            }
         </div>
   )}
 
