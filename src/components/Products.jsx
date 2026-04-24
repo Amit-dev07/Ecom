@@ -1,17 +1,16 @@
 import { FaExclamationTriangle } from "react-icons/fa";
-import Filters from "./Filters";
 import ProductCard from "./ProductCard";
 
 const Products = () => {
     const isLoading = false; // Simulating loading state
-    const errorMessage = null; // Simulating error state
+    const errorMessage = ""; // Simulating error state
     const products = [
 {
       productId: 652, 
       productName: "Iphone Xs max",
       image: "https://placehold.co/600x400",
       description: "Experience the latest in mobile technology with advanced cameras, powerful processing, and an all-day battery.",
-      quantity: 0,
+      quantity: 10,
       price: 1450.0,
       discount: 10.0,
       specialPrice: 1305.0,
@@ -33,7 +32,7 @@ const Products = () => {
             {isLoading ? (
                 <h1>Loading...</h1>
             ) : errorMessage ? (
-                <div className="flex justify-center items-center h-[200px]">
+                <div className="flex justify-center items-center h-50">
                     <FaExclamationTriangle className="text-slate-800 text-3xl mr-2"/>
                     <span className="text-slate-800 text-lg font-medium">
                         {errorMessage}
@@ -41,7 +40,7 @@ const Products = () => {
                 </div>
             ) : (
                 <div className="min-h-175">
-                    <Filters />
+                    
                     <div className="pb-6 pt-14 grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-y-6 gap-x-6">
                        {products && 
                         products.map((item, i) => <ProductCard key={i} {...item} />
