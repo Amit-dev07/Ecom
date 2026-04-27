@@ -1,7 +1,7 @@
 import { Button, Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { useState } from 'react'
 import { MdClose, MdDone } from 'react-icons/md';
-import Status from '../shared/Status';
+import Status from './Status';
 import { Divider } from '@mui/material';
 
 function ProductViewModal({ open, setOpen, product, isAvailable }) {
@@ -16,8 +16,8 @@ function ProductViewModal({ open, setOpen, product, isAvailable }) {
 
   return (
     <>
-      <Dialog open={open} as="div" className="relative z-10" onClose={close}>
-      <DialogBackdrop className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+      <Dialog open={open} as="div" className="relative z-10" onClose={() => setOpen(false)}>
+      <DialogBackdrop className="fixed inset-0 bg-gray-700/70 transition-opacity" />
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4">
             <DialogPanel
