@@ -10,9 +10,8 @@ import UserMenu from "../UserMenu";
 const Navbar = () => {
     const path = useLocation().pathname;
     const [navbarOpen, setNavbarOpen] = useState(false);
-    //const { cart } = useSelector((state) => state.carts);
+    const { cart } = useSelector((state) => state.carts);
     //const { user } = useSelector((state) => state.auth);
-    const cart = 0;
     const user = ""
     
     return (

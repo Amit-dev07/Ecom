@@ -1,5 +1,6 @@
 import { FaBoxOpen, FaHome, FaShoppingCart, FaStore, FaThList } from "react-icons/fa";
 import { bannerImageOne, bannerImageThree, bannerImageTwo } from "./constant";
+export { formatPrice } from "./formatPrice";
 
 export const bannerLists = [
     {
