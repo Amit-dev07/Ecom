@@ -10,10 +10,8 @@ import UserMenu from "../UserMenu";
 const Navbar = () => {
     const path = useLocation().pathname;
     const [navbarOpen, setNavbarOpen] = useState(false);
-    //const { cart } = useSelector((state) => state.carts);
-    //const { user } = useSelector((state) => state.auth);
-    const cart = 0;
-    const user = ""
+    const { cart } = useSelector((state) => state.carts);
+    const { user } = useSelector((state) => state.auth);
     
     return (
         <div className="h-[70px] bg-custom-gradient text-white z-50 flex items-center sticky top-0">
