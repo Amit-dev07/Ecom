@@ -6,7 +6,7 @@ import { IoExitOutline } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import BackDrop from './BackDrop';
-//import { logOutUser } from '../store/actions';
+import { logOutUser } from '../store/action';
 
 const UserMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,9 +25,9 @@ const UserMenu = () => {
       setAnchorEl(null);
     };
 
-    // const logOutHandler = () => {
-    //     dispatch(logOutUser(navigate));
-    //   };
+    const logOutHandler = () => {
+        dispatch(logOutUser(navigate));
+      };
   
     return (
       <div className='relative z-30'>
@@ -80,7 +80,7 @@ const UserMenu = () => {
             </MenuItem>
           </Link> )}
 
-            {/* <MenuItem className="flex gap-2" 
+            <MenuItem className="flex gap-2" 
                 onClick={logOutHandler}>
                     <div className='font-semibold w-full flex gap-2 items-center bg-button-gradient px-4 py-1 text-white rounded-xs'>
                     <IoExitOutline className='text-xl'/>
@@ -88,7 +88,7 @@ const UserMenu = () => {
                         LogOut
                     </span>
                     </div>
-            </MenuItem> */}
+            </MenuItem>
 
         </Menu>
 
